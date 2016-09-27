@@ -21,6 +21,10 @@ let g:SimpylFold_docstring_preview=1
 
 Plugin 'scrooloose/nerdtree'
 " ^ Explorador de archivos
+
+Plugin 'tpope/vim-fugitive'
+" ^ Plugin para utilidades git
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
