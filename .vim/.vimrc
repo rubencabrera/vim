@@ -2,6 +2,7 @@ set nocompatible              " required
 filetype off                  " required
 " Uso de Vundle
 " set the runtime path to include Vundle and initialize
+" Esta directiva funciona condicionada a haber creado los symlinks
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
