@@ -50,9 +50,14 @@ nnoremap <C-H> <C-W><C-H>
 " ^ Ctrl-l para mover a la de la derecha
 " ^ Ctrl-h para mover a la de izquierda
 
-" Activar plegado
-set foldmethod=indent
-set foldlevel=99
+" Activar plegado con Simpylfold
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+" Evitar que se plieguen imports y docstrings:
+let g:SimpylFold_docstring_preview = 0
+let g:SimpylFold_import = 0
+" ^ No parece estar funcionando
+
 " Permitir plegado con la barra espaciadora
 nnoremap <space> za
 
