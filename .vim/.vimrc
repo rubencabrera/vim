@@ -56,6 +56,8 @@ set foldlevel=99
 " Permitir plegado con la barra espaciadora
 nnoremap <space> za
 
+" Definimos BadWhitespace para poder usarlo para resaltar
+highlight BadWhitespace ctermbg=red guibg=darkred
 
 " Python, PEP-008
 au BufRead,BufNewFile *.py,*.pyw set expandtab
