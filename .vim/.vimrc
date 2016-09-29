@@ -28,7 +28,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'klen/python-mode'
 " ^ Plugin para utilidades python.
-
+Plugin 'davidhalter/jedi-vim'
+" ^ Plugin para mejorar autocompletado
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
