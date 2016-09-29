@@ -26,20 +26,39 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 " ^ Plugin para utilidades git
 
+Plugin 'klen/python-mode'
+" ^ Plugin para utilidades python.
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fin de lista de plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " Empieza el vimrc "
 syntax on
 filetype indent plugin on
 set modeline
 set background=dark
+" Indicar columna 80
+set colorcolumn=80
+" Eliminar archivos swap y backup para evitar ejecutar tests automatizados al
+" guardarse.
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Lugares en los que dividir la pantalla:
 set splitbelow
 set splitright
 " ^ abre un archivo con :sv {{nombre del fichero}} para dividir la pantalla
 " verticalmente. Usa :vs para que sea horizontal. 
+" Numerar
+set nu
+" Abrir el archivo vimrc escribiendo :vimrc
+autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Cambiar entre ventanas (usando mapeo de combinaciones):
 nnoremap <C-J> <C-W><C-J>
@@ -61,7 +80,8 @@ let g:SimpylFold_import = 0
 
 " Permitir plegado con la barra espaciadora
 nnoremap <space> za
-
+" Mostrar ocultos en NERDTree
+let NERDTreeShowHidden=1
 " Definimos BadWhitespace para poder usarlo para resaltar
 highlight BadWhitespace ctermbg=red guibg=darkred
 
