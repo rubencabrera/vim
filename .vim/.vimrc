@@ -30,6 +30,10 @@ Plugin 'klen/python-mode'
 " ^ Plugin para utilidades python.
 Plugin 'davidhalter/jedi-vim'
 " ^ Plugin para mejorar autocompletado
+Plugin 'scrooloose/nerdcommenter'
+" ^ Plugin para comentar texto mejor.
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,6 +55,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Cambiar la tecla <leader> para que sea una coma
+let mapleader=","
+set timeout timeoutlen=1500
 " Lugares en los que dividir la pantalla:
 set splitbelow
 set splitright
