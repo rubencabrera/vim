@@ -68,6 +68,9 @@ set nu
 " Abrir el archivo vimrc escribiendo :vimrc
 autocmd bufwritepost .vimrc source $MYVIMRC
 
+" Evitar tener que estirar el dedo hasta ESC pulsando jj para salir del
+" insert mode:
+inoremap jj <ESC>
 " Cambiar entre ventanas (usando mapeo de combinaciones):
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
