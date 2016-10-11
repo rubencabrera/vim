@@ -32,7 +32,8 @@ Plugin 'davidhalter/jedi-vim'
 " ^ Plugin para mejorar autocompletado
 Plugin 'scrooloose/nerdcommenter'
 " ^ Plugin para comentar texto mejor.
-
+Plugin 'tpope/vim-surround'
+" ^ Rodear texto (poner entre paréntesis, comillas...)
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
