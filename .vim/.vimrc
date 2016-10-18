@@ -34,6 +34,17 @@ Plugin 'scrooloose/nerdcommenter'
 " ^ Plugin para comentar texto mejor.
 Plugin 'tpope/vim-surround'
 " ^ Rodear texto (poner entre paréntesis, comillas...)
+" Comienzo de fragmento para utilsnips
+" Motor:
+Plugin 'SirVer/ultisnips'
+" Snippets, que van por otro lado:
+Plugin 'honza/vim-snippets'
+" Disparadores:
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" Permitir al editor de snippets separar ventana:
+let g:UltiSnipsEditSplit="vertical"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
