@@ -53,6 +53,8 @@ filetype plugin indent on    " required
 " Fin de lista de plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Vim se queda colgado por rope, lo desactivamos:
+let g:pymode_rope = 0
 
 " Empieza el vimrc "
 syntax on
