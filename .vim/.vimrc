@@ -45,7 +45,10 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Permitir al editor de snippets separar ventana:
 let g:UltiSnipsEditSplit="vertical"
-
+" Directorio donde guardar los snippets personalizados:
+let g:UltiSnipsSnippetDirectories=[$HOME.'/vim/.vim/UltiSnips']
+" ^ Tendremos que copiar en el anterior directorio los snippets de terceros
+" que queramos utilizar.
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
