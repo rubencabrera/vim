@@ -46,7 +46,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Permitir al editor de snippets separar ventana:
 let g:UltiSnipsEditSplit="vertical"
 " Directorio donde guardar los snippets personalizados:
-let g:UltiSnipsSnippetDirectories=[$HOME.'/vim/.vim/UltiSnips']
+let g:UltiSnipsSnippetsDir=$HOME.'/vim/.vim/ultisnips'
 " ^ Tendremos que copiar en el anterior directorio los snippets de terceros
 " que queramos utilizar.
 " All of your Plugins must be added before the following line
