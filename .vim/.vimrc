@@ -9,6 +9,9 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" Sintaxis de yaml
+Plugin 'avakhov/vim-yaml'
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -28,7 +31,7 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'klen/python-mode'
 " ^ Plugin para utilidades python.
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 " ^ Plugin para mejorar autocompletado
 Plugin 'scrooloose/nerdcommenter'
 " ^ Plugin para comentar texto mejor.
@@ -39,6 +42,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 " Snippets, que van por otro lado:
 Plugin 'honza/vim-snippets'
+" Plugin para proyectos android:
+Plugin 'hsanson/vim-android'
 " Disparadores:
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
