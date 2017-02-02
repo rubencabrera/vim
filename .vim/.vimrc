@@ -44,6 +44,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin para proyectos android:
 Plugin 'hsanson/vim-android'
+" TODO: Configura el path al sdk de android para que el plugin anterior
+" 	funcione.
+" let g:android_sdk_path = /ruta/al/android-sdk
 " Disparadores:
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
