@@ -1,3 +1,8 @@
+snippet ifname "If name is main"
+if __name__ == "__main__":
+	$1
+endsnippet
+
 snippet omodel "Description"
 class ${1:ModelName}(models.Model):
 	"""
@@ -5,8 +10,16 @@ class ${1:ModelName}(models.Model):
 	"""
 endsnippet
 
+snippet codi "Encoding para python"
+# -*- coding: utf-8 -*-
+endsnippet
+
+snippet sheb "Shebang para python"
+#!/usr/bin/env python
+endsnippet
+
 snippet pdb "Insertar pdb"
-import pdb; pdb.set_trace()
+import ipdb; ipdb.set_trace()
 endsnippet
 
 snippet oreadme "Readme para module odoo"
