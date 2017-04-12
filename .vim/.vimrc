@@ -56,7 +56,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsEnableSnipMate = 0
 "let g:UltiSnipsListSnippets="<c-tab>"
 "let g:UltiSnipsSnippetDirectories=['~/vim/.vim/ultisnips', '~/vim/.vim/bundle/vim-snippets/snippets']
-let g:UltiSnipsSnippetDirectories=['UltiSnips']
+let g:UltiSnipsSnippetDirectories=['UltiSnips', 'ultisnips']
 let g:UltiSnipsSnippetsDir='~/vim/.vim/ultisnips'
 " ^ Tendremos que copiar en el anterior directorio los snippets de terceros
 " Directorio donde guardar los snippets personalizados:
