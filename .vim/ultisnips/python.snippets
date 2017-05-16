@@ -1,3 +1,11 @@
+snippet argparse
+import argparse
+
+parser = argparse.ArgumentParser(description='${1: script_description}')
+parser.add_argument('${2: argument_name}', metavar='$3', type=$4, help='$5')
+args = parser.parse_args()
+endsnippet
+
 snippet copyr "Copyright notice"
 # Copyright 2017 Rubén Cabrera Martínez, Praxya
 endsnippet
