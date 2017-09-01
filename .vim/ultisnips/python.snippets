@@ -94,3 +94,46 @@ mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 To contribute to this module, please visit http://odoo-community.org.
 endsnippet
+
+snippet om2o "Odoo Many2one"
+${1:name} = fields.Many2one(
+	comodel_name="${2:model}",
+	string="${3:string}",
+	help="${4:help}",
+)
+endsnippet
+
+snippet oo2m "Odoo One2many"
+${1:name} = fields.One2many(
+	comodel_name="${2:model}",
+	inverse_name="${3:rel_id}",
+	string="${4:string}",
+	help="${5:help}",
+)
+endsnippet
+
+snippet om2m "Odoo Many2many"
+${1:name} = fields.Many2many(
+	comodel_name="${2:model}",
+	relation="${3:table_name}",
+	column1="${4:col_name}",
+	column2="${5:foreign_col_name}",
+	string="${6:string}",
+	help="${7:help}",
+)
+endsnippet
+
+snippet osel "Odoo Selection field"
+${1:name} = fields.Selection(
+	[("${2:value}", "${3:value_string}")],
+	string="${4:string}",
+	help="${5:help}",
+)
+endsnippet
+
+snippet obool "Odoo Boolean field"
+${1:name} = fields.Boolean(
+	string="${2:string}",
+	help="${3:help}",
+)
+endsnippet

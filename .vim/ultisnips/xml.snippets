@@ -1,0 +1,108 @@
+snippet ovinh "Odoo inherit view"
+<field name='inherit_id' ref='${1:ref_view}'/>
+endsnippet
+
+snippet oform "Odoo Form View"
+<record id="view_${1:name}_form" model="ir.ui.view">
+	<field name="name">view.${1:name}.form</field>
+	<field name="model">${2:model}</field>
+	<field name="arch" type="xml">
+		<form string="${3:label}">
+			<sheet>
+				<group name="main">
+					<field name="${4:field}" />
+				</group>
+			</sheet>
+		</form>
+	</field>
+</record>
+endsnippet
+
+snippet obutton "Odoo button in view"
+<button string="${1:Example}"
+		name="${2:python_function}"
+		type="object"
+		context="{}" />
+endsnippet
+snippet owizview "Odoo wizard view"
+<?xml version="1.0" encoding="utf-8"?>
+	<openerp>
+		<data>
+			<record id="view_${1:wizard_name}_form" model="ir.ui.view">
+				<field name="name">view.${1:wizard_name}.contract.form</field>
+					<field name="model">${2:model}</field>
+					<field name="arch" type="xml">
+					<form string="${3:Title}">
+						<sheet>
+							<group name="main">
+								<field name="${4:field_name}" />
+							</group>
+							<footer>
+								<button name="function_ok" string="Accept"
+								type="object"
+								class="oe_highlight"/>
+								or
+								<button string="Cancel" class="oe_link"
+								special="cancel"/>
+							</footer>
+						</sheet>
+					</form>
+				</field>
+		</record>
+	</data>
+</openerp>
+endsnippet
+snippet oviews "Odoo full view file"
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_${1:name}_form" model="ir.ui.view">
+			<field name="name">view.${1:name}.form</field>
+			<field name="model">${2:model}</field>
+			<field name="arch" type="xml">
+			<form string="${3:label}">
+				<sheet>
+					<group name="main">
+						<field name="${4:field}"/>
+					</group>
+				</sheet>
+			</form>
+			</field>
+		</record>
+		<record id="view_${1:name}_tree" model="ir.ui.view">
+			<field name="name">view.${1:name}.tree</field>
+			<field name="model">${2:model}</field>
+			<field name="arch" type="xml">
+				<tree string="${3:label}">
+					<field name="${4:field}"/>
+				</tree>
+			</field>
+		</record>
+		<record id="view_${1:name}_search" model="ir.ui.view">
+			<field name="name">view.${1:name}.search</field>
+			<field name="model">${2:model}</field>
+			<field name="arch" type="xml">
+				<search string="${3:label}">
+					<field name="${4:field}" />
+					<group string="Group By" name="groupby">
+					<filter name="${4:field}_groupby" string="${4:field}"
+					context="{'group_by': '${4:field}'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		<record id="${1:name}_action" model="ir.actions.act_window">
+			<field name="name">${3:label}</field>
+			<field name="res_model">${2:model}</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a new ${3:label}.
+				</p>
+			</field>
+		</record>
+		<menuitem id="${1:name}_menu" parent="" action="${1:name}_action"
+		sequence="20"/>
+	</data>
+</openerp>
+endsnippet
