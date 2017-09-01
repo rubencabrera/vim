@@ -42,11 +42,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'honza/vim-snippets'
 " Motor:
 Plugin 'SirVer/ultisnips'
-" Plugin para proyectos android:
-" Plugin 'hsanson/vim-android'
-" TODO: Configura el path al sdk de android para que el plugin anterior
-" 	funcione.
-" let g:android_sdk_path = /ruta/al/android-sdk
+" YouCompleteMe debe ser instalado con pasos adicionales
+Plugin 'Valloric/YouCompleteMe'
+
 " Disparadores:
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
