@@ -11,6 +11,7 @@ try:
 except ImportError:
     sys.stderr.write("Requirements not satisfied, please install with:")
     sys.stderr.write("pip install pexpect")
+    sys.exit()
 # Compatibilidad para python2 y python3 en inputs:
 try:
     input = raw_input
