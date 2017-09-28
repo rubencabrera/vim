@@ -46,9 +46,10 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 
 " Disparadores:
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-m>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="lñ"
+let g:UltiSnipsJumpForwardTrigger="df"
+let g:UltiSnipsJumpBackwardTrigger="fd"
 " Permitir al editor de snippets separar ventana:
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsEnableSnipMate = 0

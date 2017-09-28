@@ -30,8 +30,10 @@ try:
 except OSError:
     print("No .vim folder found")
 
-symlink(home + "/vim/.vim/.vimrc", home + "/.vimrc")
-symlink(home + "/vim/.vim", home + "/.vim")
+if not path.islink(home + '/.vimrc'):
+    symlink(home + "/vim/.vim/.vimrc", home + "/.vimrc")
+if not path.islink(home + '/.vim'):
+    symlink(home + "/vim/.vim", home + "/.vim")
 
 if not path.isdir(home + "/vim/.vim/bundle/Vundle.vim"):
     call([
