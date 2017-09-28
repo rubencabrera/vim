@@ -1,7 +1,7 @@
 #! /usr/bin/python
 #-.- encoding: utf-8 -.-
 
-from os import rename, path, symlink
+from os import rename, path, symlink, listdir
 from subprocess import call
 import sys
 import getpass
@@ -21,6 +21,8 @@ except NameError:
     pass
 
 home = path.expanduser("~")
+# TODO: dar opción de hacer los backups o no, o bien avisar de que se hace y
+#       hacerlo siempre para no dar por saco.
 try:
     rename(home + "/.vimrc", home + "/.vimrcOld")
 except OSError:
@@ -35,7 +37,8 @@ if not path.islink(home + '/.vimrc'):
 if not path.islink(home + '/.vim'):
     symlink(home + "/vim/.vim", home + "/.vim")
 
-if not path.isdir(home + "/vim/.vim/bundle/Vundle.vim"):
+if not path.isdir(home + "/vim/.vim/bundle/Vundle.vim") or not listdir(
+        home + "/vim/.vim/bundle/Vundle.vim"):
     call([
         "git",
         "clone",
