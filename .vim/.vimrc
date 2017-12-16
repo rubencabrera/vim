@@ -110,11 +110,11 @@ nnoremap <C-H> <C-W><C-H>
 " ^ Ctrl-h para mover a la de izquierda
 
 " Activar plegado con Simpylfold
-autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
-autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+" autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+" autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 " Evitar que se plieguen imports y docstrings:
-let g:SimpylFold_docstring_preview = 0
-let g:SimpylFold_import = 0
+" let g:SimpylFold_docstring_preview = 0
+" let g:SimpylFold_import = 0
 " ^ No parece estar funcionando
 
 " Permitir plegado con la barra espaciadora
