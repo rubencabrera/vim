@@ -56,6 +56,8 @@ if not path.isdir(home + "/vim/.vim/bundle/YouCompleteMe"):
     child.sendline(XXX)
     child.expect(pexpect.EOF, timeout=None)
     call(['vim', '-c', 'PluginInstall'] + ['-c', 'q'] * 2)
+    # TODO: La siguiente línea peta en Debian 8 porque no encuentra
+    #       las bibliotecas de BOOST
     call([
         home + '/.vim/bundle/YouCompleteMe/install.py',
         '--clang-completer',
