@@ -52,9 +52,11 @@ if not path.isdir(home + "/vim/.vim/bundle/YouCompleteMe"):
     # Install python dependencies for YouCompleteMe
     py_deps = ['build-essential', 'cmake', 'python-dev', 'python3-dev']
     child = pexpect.spawn(
-        'sudo apt-get install ' + ' '.join(py_deps) + ' -y')
+        'sudo apt-get install ' + ' '.join(py_deps) + ' -y',
+        timeout=None,
+    )
     child.logfile = sys.stdout
-    child.expect("password")
+    child.expect(["password", pexpect.EOF])
     XXX = getpass.getpass('Input your sudo password:')
     child.sendline(XXX)
     child.expect(pexpect.EOF, timeout=None)
