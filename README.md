@@ -7,15 +7,15 @@ No necesitas un entorno gráfico ni un trillón de GB de RAM para tener un IDE.
 
 Algunas de las funcionalidades que incluye son:
 
-Plegado de bloques de texto con tmhedberg/SimplyFold
-Navegación en panel lateral con scrooloose/nerdtree
-Integración con git gracias a tpope/vim-fugitive
-Comprobación de sintaxys python con klen/python-mode
-Comentado rápido de bloques de texto con scrooloose/nerdcommenter
-Envolver texto rápidamente con tpope/vim-surround
-Manejo de snippets con SirVer/ultisnips
-Algunos snippets útiles de honza/vim-snippets
-Autocompletado con Valloric/YouCompleteMe
+* Plegado de bloques de texto con tmhedberg/SimplyFold
+* Navegación en panel lateral con scrooloose/nerdtree
+* Integración con git gracias a tpope/vim-fugitive
+* Comprobación de sintaxys python con klen/python-mode
+* Comentado rápido de bloques de texto con scrooloose/nerdcommenter
+* Envolver texto rápidamente con tpope/vim-surround
+* Manejo de snippets con SirVer/ultisnips
+* Algunos snippets útiles de honza/vim-snippets
+* Autocompletado con Valloric/YouCompleteMe
 
 
 ## Compatible con:
