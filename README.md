@@ -1,19 +1,43 @@
-Compatible con:
+# Vim custom setup
 
-Ubuntu 14.04+
+Este repositorio contiene mi configuración de VIM para disponer de todo lo que
+necesita un editor de texto directamente en consola. 
+
+No necesitas un entorno gráfico ni un trillón de GB de RAM para tener un IDE.
+
+Algunas de las funcionalidades que incluye son:
+
+Plegado de bloques de texto con tmhedberg/SimplyFold
+Navegación en panel lateral con scrooloose/nerdtree
+Integración con git gracias a tpope/vim-fugitive
+Comprobación de sintaxys python con klen/python-mode
+Comentado rápido de bloques de texto con scrooloose/nerdcommenter
+Envolver texto rápidamente con tpope/vim-surround
+Manejo de snippets con SirVer/ultisnips
+Algunos snippets útiles de honza/vim-snippets
+Autocompletado con Valloric/YouCompleteMe
+
+
+## Compatible con:
+
+Ubuntu 14.04
+Ubuntu 16.04
 Debian Jessie
 
-Instrucciones:
+## Instrucciones de instalación:
 
-Clonar el repo (se clonará en la carpeta vim, supondremos que en ~/vim sin punto)
+Clonar el repo, para mayor simplicidad, hacerlo directamente en el home de 
+usuario. El repositorio se clonará en la carpeta vim, supondremos que en ~/vim,
+sin punto)
 
 Entrar en el repo clonado y ejecutar:
 
 ```
 ./instalar.py
 ```
-El script se encarga del resto. Necesitas introducir tu contraseña y tener
-permisos para instalar paquetes. 
+El script se encarga del resto. Necesitas introducir tu contraseña de sudo  y
+ tener permisos para instalar paquetes para que el autocompletado con YCM
+funcione. 
 
 El siguiente fragmento del .vimrc es el que hace que Vundle nos funcione:
 
