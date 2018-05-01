@@ -123,6 +123,8 @@ nnoremap <space> za
 let NERDTreeShowHidden=1
 " Definimos BadWhitespace para poder usarlo para resaltar
 highlight BadWhitespace ctermbg=red guibg=darkred
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
 
 " Python, PEP-008
 au BufRead,BufNewFile *.py,*.pyw set expandtab
@@ -136,3 +138,5 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 au         BufNewFile *.py,*.pyw set fileformat=unix
 au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
 
+" Travis yaml syntax:
+autocmd BufNewFile,BufRead *.travis set syntax=yaml 
