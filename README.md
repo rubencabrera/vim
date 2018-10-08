@@ -18,11 +18,14 @@ Algunas de las funcionalidades que incluye son:
 * Autocompletado con Valloric/YouCompleteMe
 
 
-## Compatible con:
+## Tested with:
 
-Ubuntu 14.04
-Ubuntu 16.04
-Debian Jessie
+- Ubuntu 14.04
+- Ubuntu 16.04
+- Ubuntu 17.10
+- Ubuntu 18.04
+- Debian Jessie
+- Debian Stretch
 
 ## Instrucciones de instalación:
 
