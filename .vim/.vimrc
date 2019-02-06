@@ -137,3 +137,10 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
 au         BufNewFile *.py,*.pyw set fileformat=unix
 au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
+
+" Bash space indent
+au BufRead,BufNewFile *.bash set tabstop=2
+au BufRead,BufNewFile *.bash set expandtab
+au BufRead,BufNewFile *.bash set softtabstop=2
+au BufRead,BufNewFile *.bash set shiftwidth=2
+au BufRead,BufNewFile *.bash set autoindent
