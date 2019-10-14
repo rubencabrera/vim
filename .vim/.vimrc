@@ -45,6 +45,10 @@ Plugin 'SirVer/ultisnips'
 " YouCompleteMe debe ser instalado con pasos adicionales
 Plugin 'Valloric/YouCompleteMe'
 
+" FZF: fuzzy search plugin
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
 " Disparadores:
 "let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsExpandTrigger="lñ"
@@ -140,6 +144,13 @@ au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
 
 " Bash space indent
 au BufRead,BufNewFile *.bash set tabstop=2
+au BufRead,BufNewFile *.bash set expandtab
+au BufRead,BufNewFile *.bash set softtabstop=2
+au BufRead,BufNewFile *.bash set shiftwidth=2
+au BufRead,BufNewFile *.bash set autoindent
+
+" json indent
+au BufRead,BufNewFile *.json set tabstop=2
 au BufRead,BufNewFile *.bash set expandtab
 au BufRead,BufNewFile *.bash set softtabstop=2
 au BufRead,BufNewFile *.bash set shiftwidth=2
