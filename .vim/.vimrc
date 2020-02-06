@@ -49,6 +49,17 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
+" Tagbar
+Plugin 'majutsushi/tagbar'
+
+" Syntastic
+Plugin 'vim-syntastic/syntastic'
+
+" Rust language syntax
+Plugin 'rust-lang/rust.vim'
+
+" Typescript syntax
+Plugin 'leafgarland/typescript-vim'
 " Disparadores:
 "let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsExpandTrigger="lñ"
@@ -64,6 +75,8 @@ let g:UltiSnipsSnippetsDir='~/vim/.vim/ultisnips'
 " ^ Tendremos que copiar en el anterior directorio los snippets de terceros
 " Directorio donde guardar los snippets personalizados:
 " que queramos utilizar.
+"
+"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -155,3 +168,10 @@ au BufRead,BufNewFile *.bash set expandtab
 au BufRead,BufNewFile *.bash set softtabstop=2
 au BufRead,BufNewFile *.bash set shiftwidth=2
 au BufRead,BufNewFile *.bash set autoindent
+
+" Typescript indent 
+au BufRead,BufNewFile *.ts set tabstop=2
+au BufRead,BufNewFile *.ts set expandtab
+au BufRead,BufNewFile *.ts set softtabstop=2
+au BufRead,BufNewFile *.ts set shiftwidth=2
+au BufRead,BufNewFile *.ts set autoindent
