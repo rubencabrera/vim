@@ -126,6 +126,9 @@ nnoremap <C-H> <C-W><C-H>
 " ^ Ctrl-l para mover a la de la derecha
 " ^ Ctrl-h para mover a la de izquierda
 
+" Abrir TAG en nueva pestaña con LEADER T:
+" Leader es , tal y como se define unas líneas más arriba
+nnoremap <silent><Leader>T <C-w><C-]><C-w>T
 " Activar plegado con Simpylfold
 " autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 " autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
