@@ -9,8 +9,19 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" PLUGIN LIST
+
+" Auto Pairs, insert or delete pairs of characters like brackets
+Plugin 'jiangmiao/auto-pairs'
+
 " Sintaxis de yaml
 Plugin 'avakhov/vim-yaml'
+
+" Sintaxis de Terraform
+Plugin 'hashivim/vim-terraform'
+
+let g:terraform_fmt_on_save=1
+let g:terraform_fold_sections=1
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -49,6 +60,29 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
+" Tagbar
+Plugin 'majutsushi/tagbar'
+
+" Syntastic
+Plugin 'vim-syntastic/syntastic'
+
+" Javascript syntax
+Plugin 'pangloss/vim-javascript'
+
+" JSX syntax for react
+Plugin 'MaxMEllon/vim-jsx-pretty'
+
+" Rust language syntax
+Plugin 'rust-lang/rust.vim'
+
+" Typescript syntax
+Plugin 'leafgarland/typescript-vim'
+
+" puto prettier
+Plugin 'prettier/vim-prettier'
+
+" Beancount syntax
+Plugin 'nathangrigg/vim-beancount'
 " Disparadores:
 "let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsExpandTrigger="lñ"
@@ -64,6 +98,16 @@ let g:UltiSnipsSnippetsDir='~/vim/.vim/ultisnips'
 " ^ Tendremos que copiar en el anterior directorio los snippets de terceros
 " Directorio donde guardar los snippets personalizados:
 " que queramos utilizar.
+"
+" YCM config for virtual environments:
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \ 'g:ycm_python_interpreter_path',
+  \ 'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/vim/global_extra_conf.py'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -86,6 +130,13 @@ set colorcolumn=80
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Números de línea híbridos (Hybrid numbertoggle)
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 " Cambiar la tecla <leader> para que sea una coma
 let mapleader=","
@@ -112,6 +163,11 @@ nnoremap <C-H> <C-W><C-H>
 " ^ Ctrl-k para mover a la de arriba
 " ^ Ctrl-l para mover a la de la derecha
 " ^ Ctrl-h para mover a la de izquierda
+
+" Abrir TAG de ctags en nueva pestaña con LEADER T:
+" Leader es , tal y como se define unas líneas más arriba
+" Al pulsar ,T nos abre la tag en una tab nueva
+nnoremap <silent><Leader>T <C-w><C-]><C-w>T
 
 " Activar plegado con Simpylfold
 " autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
@@ -149,9 +205,30 @@ au BufRead,BufNewFile *.bash set softtabstop=2
 au BufRead,BufNewFile *.bash set shiftwidth=2
 au BufRead,BufNewFile *.bash set autoindent
 
+" Javascript space indent
+au BufRead,BufNewFile *.js set tabstop=2
+au BufRead,BufNewFile *.js set expandtab
+au BufRead,BufNewFile *.js set softtabstop=2
+au BufRead,BufNewFile *.js set shiftwidth=2
+au BufRead,BufNewFile *.js set autoindent
+
 " json indent
 au BufRead,BufNewFile *.json set tabstop=2
-au BufRead,BufNewFile *.bash set expandtab
-au BufRead,BufNewFile *.bash set softtabstop=2
-au BufRead,BufNewFile *.bash set shiftwidth=2
-au BufRead,BufNewFile *.bash set autoindent
+au BufRead,BufNewFile *.json set expandtab
+au BufRead,BufNewFile *.json set softtabstop=2
+au BufRead,BufNewFile *.json set shiftwidth=2
+au BufRead,BufNewFile *.json set autoindent
+
+" Typescript indent 
+au BufRead,BufNewFile *.ts set tabstop=2
+au BufRead,BufNewFile *.ts set expandtab
+au BufRead,BufNewFile *.ts set softtabstop=2
+au BufRead,BufNewFile *.ts set shiftwidth=2
+au BufRead,BufNewFile *.ts set autoindent
+
+" Go indent
+" au BufRead,BufNewFile *.go set tabstop=2
+" au BufRead,BufNewFile *.go set expandtab
+" au BufRead,BufNewFile *.go set softtabstop=2
+" au BufRead,BufNewFile *.go set shiftwidth=2
+" au BufRead,BufNewFile *.go set autoindent
