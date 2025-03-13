@@ -86,7 +86,6 @@ Plugin 'prettier/vim-prettier'
 
 " Beancount syntax
 Plugin 'nathangrigg/vim-beancount'
-"
 " Disparadores:
 "let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsExpandTrigger="lñ"
