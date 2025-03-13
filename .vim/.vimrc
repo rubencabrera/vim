@@ -64,7 +64,10 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'majutsushi/tagbar'
 
 " Syntastic
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
+
+" ALE, sustituye a sytastic
+Plugin 'dense-analysis/ale'
 
 " Javascript syntax
 Plugin 'pangloss/vim-javascript'
@@ -83,6 +86,7 @@ Plugin 'prettier/vim-prettier'
 
 " Beancount syntax
 Plugin 'nathangrigg/vim-beancount'
+"
 " Disparadores:
 "let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsExpandTrigger="lñ"
@@ -107,6 +111,10 @@ let g:ycm_extra_conf_vim_data = [
   \ 'g:ycm_python_sys_path'
   \]
 let g:ycm_global_ycm_extra_conf = '~/vim/global_extra_conf.py'
+
+" Configuraciones de sintaxys para ALE
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'yaml': ['prettier', 'yamlfmt']}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -205,6 +213,9 @@ au BufRead,BufNewFile *.bash set softtabstop=2
 au BufRead,BufNewFile *.bash set shiftwidth=2
 au BufRead,BufNewFile *.bash set autoindent
 
+" Markdown preferences
+au BufRead,BufNewFile *.md,*.MD set textwidth=80
+
 " Javascript space indent
 au BufRead,BufNewFile *.js set tabstop=2
 au BufRead,BufNewFile *.js set expandtab
@@ -232,3 +243,24 @@ au BufRead,BufNewFile *.ts set autoindent
 " au BufRead,BufNewFile *.go set softtabstop=2
 " au BufRead,BufNewFile *.go set shiftwidth=2
 " au BufRead,BufNewFile *.go set autoindent
+
+" cpp indent
+au BufRead,BufNewFile *.cpp set tabstop=2
+au BufRead,BufNewFile *.cpp set expandtab
+au BufRead,BufNewFile *.cpp set softtabstop=2
+au BufRead,BufNewFile *.cpp set shiftwidth=2
+au BufRead,BufNewFile *.cpp set autoindent
+
+" html indent
+au BufRead,BufNewFile *.html set tabstop=2
+au BufRead,BufNewFile *.html set expandtab
+au BufRead,BufNewFile *.html set softtabstop=2
+au BufRead,BufNewFile *.html set shiftwidth=2
+au BufRead,BufNewFile *.html set autoindent
+
+" xml indent
+au BufRead,BufNewFile *.xml set tabstop=4
+au BufRead,BufNewFile *.xml set expandtab
+au BufRead,BufNewFile *.xml set softtabstop=4
+au BufRead,BufNewFile *.xml set shiftwidth=4
+au BufRead,BufNewFile *.xml set autoindent
