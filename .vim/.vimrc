@@ -24,7 +24,7 @@ let g:terraform_fmt_on_save=1
 let g:terraform_fold_sections=1
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
@@ -34,14 +34,18 @@ Plugin 'tmhedberg/SimpylFold'
 " ^ no olvides instalar con :PluginInstall
 let g:SimpylFold_docstring_preview=1
 
-Plugin 'scrooloose/nerdtree'
-" ^ Explorador de archivos
+" Plugin 'scrooloose/nerdtree'
+" ^ Explorador de archivos para noobs
 
 Plugin 'tpope/vim-fugitive'
 " ^ Plugin para utilidades git
 
-Plugin 'klen/python-mode'
+" Plugin 'python-mode/python-mode'
 " ^ Plugin para utilidades python.
+
+let g:pymode_options_max_line_length = 125
+let g:pymode_lint_options_pep8 = {'max_line_length': g:pymode_options_max_line_length}
+
 "Plugin 'davidhalter/jedi-vim'
 " ^ Plugin para mejorar autocompletado
 Plugin 'scrooloose/nerdcommenter'
@@ -54,7 +58,8 @@ Plugin 'honza/vim-snippets'
 " Motor:
 Plugin 'SirVer/ultisnips'
 " YouCompleteMe debe ser instalado con pasos adicionales
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 
 " FZF: fuzzy search plugin
 Plugin 'junegunn/fzf'
@@ -65,12 +70,16 @@ Plugin 'majutsushi/tagbar'
 
 " Syntastic
 " Plugin 'vim-syntastic/syntastic'
+" Ha sido reemplazado por ALE
 
-" ALE, sustituye a sytastic
+" ALE, para la sintaxis
 Plugin 'dense-analysis/ale'
 
-" Javascript syntax
+" Javascript syntax, sintaxis
 Plugin 'pangloss/vim-javascript'
+
+" Jinja2 syntax
+Plugin 'Glench/Vim-Jinja2-Syntax' 
 
 " JSX syntax for react
 Plugin 'MaxMEllon/vim-jsx-pretty'
@@ -86,6 +95,10 @@ Plugin 'prettier/vim-prettier'
 
 " Beancount syntax
 Plugin 'nathangrigg/vim-beancount'
+
+" Sintaxis Jsonnet
+Plugin 'google/vim-jsonnet'
+
 " Disparadores:
 "let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsExpandTrigger="lñ"
@@ -131,12 +144,15 @@ filetype indent plugin on
 set modeline
 set background=dark
 " Indicar columna 80
-set colorcolumn=80
+" set colorcolumn=80
 " Eliminar archivos swap y backup para evitar ejecutar tests automatizados al
 " guardarse.
 set nobackup
 set nowritebackup
 set noswapfile
+
+" En algunas versiones no sale por defecto.
+set ruler
 
 " Números de línea híbridos (Hybrid numbertoggle)
 :augroup numbertoggle
@@ -193,18 +209,6 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
-" Python, PEP-008
-au BufRead,BufNewFile *.py,*.pyw set expandtab
-au BufRead,BufNewFile *.py,*.pyw set textwidth=139
-au BufRead,BufNewFile *.py,*.pyw set tabstop=4
-au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
-au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw set autoindent
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
-au         BufNewFile *.py,*.pyw set fileformat=unix
-au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
-
 " Bash space indent
 au BufRead,BufNewFile *.bash set tabstop=2
 au BufRead,BufNewFile *.bash set expandtab
@@ -212,8 +216,26 @@ au BufRead,BufNewFile *.bash set softtabstop=2
 au BufRead,BufNewFile *.bash set shiftwidth=2
 au BufRead,BufNewFile *.bash set autoindent
 
-" Markdown preferences
-au BufRead,BufNewFile *.md,*.MD set textwidth=80
+" cpp indent
+au BufRead,BufNewFile *.cpp set tabstop=2
+au BufRead,BufNewFile *.cpp set expandtab
+au BufRead,BufNewFile *.cpp set softtabstop=2
+au BufRead,BufNewFile *.cpp set shiftwidth=2
+au BufRead,BufNewFile *.cpp set autoindent
+
+" Go indent
+au BufRead,BufNewFile *.go set tabstop=2
+au BufRead,BufNewFile *.go set expandtab
+au BufRead,BufNewFile *.go set softtabstop=2
+au BufRead,BufNewFile *.go set shiftwidth=2
+au BufRead,BufNewFile *.go set autoindent
+
+" html indent
+au BufRead,BufNewFile *.html set tabstop=2
+au BufRead,BufNewFile *.html set expandtab
+au BufRead,BufNewFile *.html set softtabstop=2
+au BufRead,BufNewFile *.html set shiftwidth=2
+au BufRead,BufNewFile *.html set autoindent
 
 " Javascript space indent
 au BufRead,BufNewFile *.js set tabstop=2
@@ -229,6 +251,31 @@ au BufRead,BufNewFile *.json set softtabstop=2
 au BufRead,BufNewFile *.json set shiftwidth=2
 au BufRead,BufNewFile *.json set autoindent
 
+" jsonnet indent
+au BufRead,BufNewFile *.jsonnet set tabstop=2
+au BufRead,BufNewFile *.jsonnet set expandtab
+au BufRead,BufNewFile *.jsonnet set softtabstop=2
+au BufRead,BufNewFile *.jsonnet set shiftwidth=2
+au BufRead,BufNewFile *.jsonnet set autoindent
+
+" Markdown preferences
+au BufRead,BufNewFile *.md,*.MD set textwidth=80
+
+" nunjucks template syntax maps
+au BufRead,BufNewFile *.tf.njk set filetype=terraform
+
+" Python, PEP-008
+au BufRead,BufNewFile *.py,*.pyw set expandtab
+au BufRead,BufNewFile *.py,*.pyw set textwidth=139
+au BufRead,BufNewFile *.py,*.pyw set tabstop=4
+au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
+au BufRead,BufNewFile *.py,*.pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw set autoindent
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /\s\+$/
+au         BufNewFile *.py,*.pyw set fileformat=unix
+au BufRead,BufNewFile *.py,*.pyw let b:comment_leader = '#'
+
 " Typescript indent 
 au BufRead,BufNewFile *.ts set tabstop=2
 au BufRead,BufNewFile *.ts set expandtab
@@ -236,30 +283,16 @@ au BufRead,BufNewFile *.ts set softtabstop=2
 au BufRead,BufNewFile *.ts set shiftwidth=2
 au BufRead,BufNewFile *.ts set autoindent
 
-" Go indent
-" au BufRead,BufNewFile *.go set tabstop=2
-" au BufRead,BufNewFile *.go set expandtab
-" au BufRead,BufNewFile *.go set softtabstop=2
-" au BufRead,BufNewFile *.go set shiftwidth=2
-" au BufRead,BufNewFile *.go set autoindent
-
-" cpp indent
-au BufRead,BufNewFile *.cpp set tabstop=2
-au BufRead,BufNewFile *.cpp set expandtab
-au BufRead,BufNewFile *.cpp set softtabstop=2
-au BufRead,BufNewFile *.cpp set shiftwidth=2
-au BufRead,BufNewFile *.cpp set autoindent
-
-" html indent
-au BufRead,BufNewFile *.html set tabstop=2
-au BufRead,BufNewFile *.html set expandtab
-au BufRead,BufNewFile *.html set softtabstop=2
-au BufRead,BufNewFile *.html set shiftwidth=2
-au BufRead,BufNewFile *.html set autoindent
-
 " xml indent
 au BufRead,BufNewFile *.xml set tabstop=4
 au BufRead,BufNewFile *.xml set expandtab
 au BufRead,BufNewFile *.xml set softtabstop=4
 au BufRead,BufNewFile *.xml set shiftwidth=4
 au BufRead,BufNewFile *.xml set autoindent
+
+" Zsh space indent
+au BufRead,BufNewFile *.zsh set tabstop=2
+au BufRead,BufNewFile *.zsh set expandtab
+au BufRead,BufNewFile *.zsh set softtabstop=2
+au BufRead,BufNewFile *.zsh set shiftwidth=2
+au BufRead,BufNewFile *.zsh set autoindent
